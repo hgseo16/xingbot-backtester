@@ -63,6 +63,8 @@ class Backtest_Engine:
         # 포트폴리오 최저
         self.mdd = 0
 
+        self.test = []
+
         load_dotenv()
 
         AUTHENTICATION_PASSWORD = os.environ.get('AUTHENTICATION_PASSWORD')
@@ -209,9 +211,11 @@ class Backtest_Engine:
                 else:
                     self.ties += 1
                     self.trades.append(self.stock_held_percentage)
+
                 self.stock_held_percentage = 0.0
 
                 self.cnt+=1
+
 
             yesterday_price = row[1]
             self.end_date = row[0]
@@ -246,14 +250,19 @@ class Backtest_Engine:
         print('average profits: {}%'.format(average_profit*100))
         print('average losses: {}%'.format(average_loss*100))
 
-        # print(self.trades)
+        print(self.trades)
 
         temp = self.initial_capital
+        result = 1
+        temp_mdd = min(self.loss_trades)
 
         for i in self.trades:
             temp = temp * (1+i)
+            result = result + i
 
-        print('Sudo Result: {}'.format(temp))
+        print('Sudo Return ($): {}'.format(round(temp)))
+        print('Sudo Return (%): {}'.format(result*100))
+        print('Sudo MDD (%): {}'.format(temp_mdd*100))
 
 def reducefract(n, d):
     '''Reduces fractions. n is the numerator and d the denominator.'''

@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657035371769</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Results and Sudo results don't add up">
+      <created>1657035971241</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657035971241</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -112,33 +119,34 @@
     <MESSAGE value="Backtester refactored" />
     <MESSAGE value="W/L added" />
     <MESSAGE value="CAGR, total percentage, win rate, pl ratio added" />
-    <option name="LAST_COMMIT_MESSAGE" value="CAGR, total percentage, win rate, pl ratio added" />
+    <MESSAGE value="Results and Sudo results don't add up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Results and Sudo results don't add up" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1696" height="368" key="GridCell.Tab.0.bottom" timestamp="1657035502784">
+    <state width="1696" height="368" key="GridCell.Tab.0.bottom" timestamp="1657043000521">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1696" height="368" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1657035502784" />
-    <state width="1696" height="368" key="GridCell.Tab.0.center" timestamp="1657035502783">
+    <state width="1696" height="368" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1657043000521" />
+    <state width="1696" height="368" key="GridCell.Tab.0.center" timestamp="1657043000521">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1696" height="368" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1657035502783" />
-    <state width="1696" height="368" key="GridCell.Tab.0.left" timestamp="1657035502783">
+    <state width="1696" height="368" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1657043000521" />
+    <state width="1696" height="368" key="GridCell.Tab.0.left" timestamp="1657043000521">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1696" height="368" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1657035502783" />
-    <state width="1696" height="368" key="GridCell.Tab.0.right" timestamp="1657035502783">
+    <state width="1696" height="368" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1657043000521" />
+    <state width="1696" height="368" key="GridCell.Tab.0.right" timestamp="1657043000521">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1696" height="368" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1657035502783" />
+    <state width="1696" height="368" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1657043000521" />
     <state x="2081" y="344" key="SettingsEditor" timestamp="1657014759774">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2081" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1657014759774" />
-    <state x="2172" y="419" key="Vcs.Push.Dialog.v2" timestamp="1657035373470">
+    <state x="2172" y="419" key="Vcs.Push.Dialog.v2" timestamp="1657035972542">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="2172" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1657035373470" />
+    <state x="2172" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1657035972542" />
     <state x="2243" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1657014710793">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
