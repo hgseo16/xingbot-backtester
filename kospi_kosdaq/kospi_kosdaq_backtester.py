@@ -191,6 +191,7 @@ class Backtest_Engine:
                     # appends percentage change
                     self.wins += 1
                     self.win_trades.append(self.stock_held_percentage)
+                    self.trades.append(self.stock_held_percentage)
 
                 elif self.stock_held_percentage < 0: # if loss increment number of losses
                     # appends tuple (bought date, price at bought date, sold date, price at sold date, percentage change)
@@ -203,10 +204,11 @@ class Backtest_Engine:
                     # appends percentage change
                     self.losses += 1
                     self.loss_trades.append(self.stock_held_percentage)
+                    self.trades.append(self.stock_held_percentage)
 
                 else:
                     self.ties += 1
-
+                    self.trades.append(self.stock_held_percentage)
                 self.stock_held_percentage = 0.0
 
                 self.cnt+=1
@@ -218,7 +220,10 @@ class Backtest_Engine:
         print('--------------------')
         print('Start Date: {}'.format(self.start_date))
         print('Final Date: {}'.format(self.end_date))
+        print(self.stock_held_percentage)
         gain = round(self.amount_bought * (1 + self.stock_held_percentage))
+        print(gain)
+        print(self.available_capital)
         self.available_capital += gain
         print("Initial Capital: {}".format(self.initial_capital))
         print("Final Capital: {}".format(self.available_capital))
@@ -240,6 +245,15 @@ class Backtest_Engine:
 
         print('average profits: {}%'.format(average_profit*100))
         print('average losses: {}%'.format(average_loss*100))
+
+        # print(self.trades)
+
+        temp = self.initial_capital
+
+        for i in self.trades:
+            temp = temp * (1+i)
+
+        print('Sudo Result: {}'.format(temp))
 
 def reducefract(n, d):
     '''Reduces fractions. n is the numerator and d the denominator.'''
