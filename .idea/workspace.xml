@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a5632dfa-cbc8-49ec-8390-506841be2b88" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2BWGxpkU22hyWGq2nnFcZBFtOIY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="backtester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="xingbot-backtester" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\서형규\PycharmProjects\xingbot-backtester\backtester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.backtester" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a5632dfa-cbc8-49ec-8390-506841be2b88" name="Default Changelist" comment="" />
+      <created>1657014676022</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657014676022</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1696" height="626" key="GridCell.Tab.0.bottom" timestamp="1657014957567">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="626" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1657014957567" />
+    <state width="1696" height="626" key="GridCell.Tab.0.center" timestamp="1657014957567">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="626" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1657014957567" />
+    <state width="1696" height="626" key="GridCell.Tab.0.left" timestamp="1657014957567">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="626" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1657014957567" />
+    <state width="1696" height="626" key="GridCell.Tab.0.right" timestamp="1657014957567">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="626" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1657014957567" />
+    <state x="2081" y="344" key="SettingsEditor" timestamp="1657014759774">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2081" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1657014759774" />
+    <state x="2243" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1657014710793">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2243" y="319" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1657014710793" />
+  </component>
+</project>
