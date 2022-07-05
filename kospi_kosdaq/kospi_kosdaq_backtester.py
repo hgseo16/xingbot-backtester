@@ -5,11 +5,13 @@ from dotenv import load_dotenv
 class Backtest_Engine:
 
     def __init__(self, table, time_frame, market):
-        print('Backtest_Engine Running...')
 
         # 2천만원
         self.initial_capital = 20000000.0
         self.available_capital = self.initial_capital
+
+        self.start_date = None
+        self.end_date = None
 
         # Final Result
         self.end_capital = None
@@ -54,8 +56,11 @@ class Backtest_Engine:
         self.win_rate = 0
         # 거래별 수익률
         self.trades = []
+        self.win_trades = []
+        self.loss_trades = []
         # 손익비
-        self.pl_ratio = 0
+        self.pl_ratio = ''
+        # 포트폴리오 최저
         self.mdd = 0
 
         load_dotenv()
@@ -95,7 +100,9 @@ class Backtest_Engine:
         SMA_10 = 0
         SMA_20 = 0
 
-        for row in self.rs:
+        for idx, row in enumerate(self.rs):
+            if idx == 0:
+                self.start_date = row[0]
             curr_price = row[1]
             # row(1) is the closing price (가격)
             SMA_3_list.append(row[1])
@@ -154,7 +161,7 @@ class Backtest_Engine:
 
             # Sell Condition
             # if (self.stock_held == True) and ((curr_price <= float(SMA_3)) and (curr_price <= float(SMA_5)) and (curr_price <= float(SMA_10))):
-            if (self.stock_held == True) and ((curr_price <= float(SMA_20))):
+            if (self.stock_held == True) and ((curr_price < float(SMA_20))):
 
                 self.stock_held = False
 
@@ -175,33 +182,64 @@ class Backtest_Engine:
 
                 if self.stock_held_percentage > 0: # if profit increment number of wins
                     self.wins += 1
+                    # appends tuple (bought date, price at bought date, sold date, price at sold date, percentage change)
+                    # tuple_val = (
+                    # self.temp_buy_date, self.temp_buy_date_price, self.temp_sell_date, self.temp_sell_date_price,
+                    # self.stock_held_percentage)
+                    # self.win_trades.append(tuple_val)
+
+                    # appends percentage change
+                    self.wins += 1
+                    self.win_trades.append(self.stock_held_percentage)
+
                 elif self.stock_held_percentage < 0: # if loss increment number of losses
+                    # appends tuple (bought date, price at bought date, sold date, price at sold date, percentage change)
+                    # self.losses += 1
+                    # tuple_val = (
+                    # self.temp_buy_date, self.temp_buy_date_price, self.temp_sell_date, self.temp_sell_date_price,
+                    # self.stock_held_percentage)
+                    # self.loss_trades.append(tuple_val)
+
+                    # appends percentage change
                     self.losses += 1
+                    self.loss_trades.append(self.stock_held_percentage)
+
                 else:
                     self.ties += 1
-
-                tuple_val = (self.temp_buy_date, self.temp_buy_date_price, self.temp_sell_date, self.temp_sell_date_price, self.stock_held_percentage)
-                self.trades.append(tuple_val)
 
                 self.stock_held_percentage = 0.0
 
                 self.cnt+=1
 
             yesterday_price = row[1]
-
+            self.end_date = row[0]
 
 
         print('--------------------')
-        print('FINAL: {}'.format(row[0]))
+        print('Start Date: {}'.format(self.start_date))
+        print('Final Date: {}'.format(self.end_date))
         gain = round(self.amount_bought * (1 + self.stock_held_percentage))
         self.available_capital += gain
-        print("Total profit: {}".format(self.available_capital))
-        print("stock_held_percentage: {}".format(self.stock_held_percentage))
-        print("num_bought: {}".format(self.num_bought))
-        # print("amount_bought: {}".format(self.amount_bought))
+        print("Initial Capital: {}".format(self.initial_capital))
+        print("Final Capital: {}".format(self.available_capital))
+
+        # 수익금, 수익률
+        self.total_gains_dollar = self.available_capital - self.initial_capital
+        self.total_gains_percentage = (self.total_gains_dollar / self.initial_capital) * 100
+        print("Total Gains in Won Value: {}".format(self.total_gains_dollar))
+        print("Total Gains in %: {}%".format(self.total_gains_percentage))
+
         print("Number of Trades: {}".format(self.cnt))
-        print(reducefract(self.wins, self.losses))
-        print(self.trades)
+
+        # W/L
+        print("W/L (%): {}".format(reducefract(self.wins, self.losses)))
+
+        # P/L
+        average_profit = round(sum(self.win_trades) / len(self.win_trades), 6)
+        average_loss = round((sum(self.loss_trades) / len(self.loss_trades) * -1), 6)
+
+        print('average profits: {}%'.format(average_profit*100))
+        print('average losses: {}%'.format(average_loss*100))
 
 def reducefract(n, d):
     '''Reduces fractions. n is the numerator and d the denominator.'''
@@ -217,5 +255,5 @@ def reducefract(n, d):
     greatest=gcd(n,d)
     n/=greatest
     d/=greatest
-    print('{}/{}'.format(n, d))
+    print('W/L: {}/{}'.format(n, d))
     return round((n/d),3)
