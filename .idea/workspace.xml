@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5632dfa-cbc8-49ec-8390-506841be2b88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kospi_kosdaq/kospi_kosdaq_backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/backtester.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,19 @@
       <option name="presentableId" value="Default" />
       <updated>1657014676022</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1657015001105</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657015001105</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1696" height="626" key="GridCell.Tab.0.bottom" timestamp="1657014957567">
@@ -92,6 +106,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="2081" y="344" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1657014759774" />
+    <state x="2172" y="419" key="Vcs.Push.Dialog.v2" timestamp="1657015002526">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2172" y="419" key="Vcs.Push.Dialog.v2/0.0.3440.1400@0.0.3440.1400" timestamp="1657015002526" />
     <state x="2243" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1657014710793">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
