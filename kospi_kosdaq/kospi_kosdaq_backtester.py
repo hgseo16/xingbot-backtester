@@ -138,7 +138,7 @@ class Backtest_Engine:
             # While stock is being held...
             if self.stock_held == True:
                 # percentage_change is 등락률 or % change for the day
-                self.stock_held_percentage += (percentage_change)
+                self.stock_held_percentage += round((percentage_change), 6)
                 # print("당일등락률: {}".format(percentage_change))
                 # print("보유종목등락률: {}".format(self.stock_held_percentage))
 
