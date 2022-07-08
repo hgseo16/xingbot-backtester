@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 
 class Backtest_Engine:
+    # Fix class to have less errors
 
     def __init__(self, table, time_frame, market):
 
