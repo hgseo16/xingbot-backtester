@@ -143,6 +143,7 @@ if __name__ == '__main__':
             )
         )
 
+        # cerebro = bt.Cerebro(coc = True, coo = True)
         cerebro = bt.Cerebro()
 
         cerebro.adddata(data)
