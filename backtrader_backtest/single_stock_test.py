@@ -143,8 +143,8 @@ if __name__ == '__main__':
             )
         )
 
-        # cerebro = bt.Cerebro(coc = True, coo = True)
-        cerebro = bt.Cerebro()
+        cerebro = bt.Cerebro(cheat_on_open=True)
+        cerebro.broker.set_coc(True)
 
         cerebro.adddata(data)
         cerebro.addstrategy(OverNight)
