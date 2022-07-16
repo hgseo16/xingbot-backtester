@@ -127,47 +127,80 @@ class OverNight(bt.Strategy):
 if __name__ == '__main__':
 
 
-    stocks = ['122630.KS', '252670.KS', '229200.KS', '233740.KS', '251340.KS']
     start = '2017-12-19'
     end = '2022-07-07'
 
-    # s = '122630.KS'
+    s = '122630.KS'
 
-    for s in stocks:
-        data = bt.feeds.PandasData(
-            dataname=yf.download(
-                s,
-                start,
-                end,
-                auto_adjust=True
-            )
+    data = bt.feeds.PandasData(
+        dataname=yf.download(
+            s,
+            start,
+            end,
+            auto_adjust=True
         )
+    )
 
-        cerebro = bt.Cerebro(cheat_on_open=True)
-        cerebro.broker.set_coc(True)
+    cerebro = bt.Cerebro(cheat_on_open=True)
+    cerebro.broker.set_coc(True)
 
-        cerebro.adddata(data)
-        cerebro.addstrategy(OverNight)
-        cerebro.broker.setcash(1000000.0)
-        cerebro.addsizer(bt.sizers.PercentSizer, percents=100)
-        cerebro.addanalyzer(bt.analyzers.AnnualReturn, _name='yearlyreturn')
+    cerebro.adddata(data)
+    cerebro.addstrategy(OverNight)
+    cerebro.broker.setcash(1000000.0)
+    cerebro.addsizer(bt.sizers.PercentSizer, percents=100)
+    cerebro.addanalyzer(bt.analyzers.AnnualReturn, _name='yearlyreturn')
 
-        print(s)
-        start_value = cerebro.broker.getvalue()
-        print('Starting Portfolio Value: %.2f' % start_value)
+    print(s)
+    start_value = cerebro.broker.getvalue()
+    print('Starting Portfolio Value: %.2f' % start_value)
 
-        result = cerebro.run()
+    result = cerebro.run()
 
-        end_value = cerebro.broker.getvalue()
-        print('Final Portfolio Value: %.2f' % end_value)
+    end_value = cerebro.broker.getvalue()
+    print('Final Portfolio Value: %.2f' % end_value)
 
-        # print(result[0].analyzers.yearlyreturn.get_analysis())
+    # print(result[0].analyzers.yearlyreturn.get_analysis())
 
-        rt = (end_value - start_value) / start_value * 100
-        print('Returns: %.2f%%' % rt)
+    rt = (end_value - start_value) / start_value * 100
+    print('Returns: %.2f%%' % rt)
 
-        # cerebro.plot(style='candlestick')
+    cerebro.plot(style='candlestick')
 
-        # if s == '233740.KS':
-        #     cerebro.plot(style='candlestick')
+
+    # stocks = ['122630.KS', '252670.KS', '229200.KS', '233740.KS', '251340.KS']
+
+    # for s in stocks:
+    #     data = bt.feeds.PandasData(
+    #         dataname=yf.download(
+    #             s,
+    #             start,
+    #             end,
+    #             auto_adjust=True
+    #         )
+    #     )
+    #
+    #     cerebro = bt.Cerebro(cheat_on_open=True)
+    #     cerebro.broker.set_coc(True)
+    #
+    #     cerebro.adddata(data)
+    #     cerebro.addstrategy(OverNight)
+    #     cerebro.broker.setcash(1000000.0)
+    #     cerebro.addsizer(bt.sizers.PercentSizer, percents=100)
+    #     cerebro.addanalyzer(bt.analyzers.AnnualReturn, _name='yearlyreturn')
+    #
+    #     print(s)
+    #     start_value = cerebro.broker.getvalue()
+    #     print('Starting Portfolio Value: %.2f' % start_value)
+    #
+    #     result = cerebro.run()
+    #
+    #     end_value = cerebro.broker.getvalue()
+    #     print('Final Portfolio Value: %.2f' % end_value)
+    #
+    #     # print(result[0].analyzers.yearlyreturn.get_analysis())
+    #
+    #     rt = (end_value - start_value) / start_value * 100
+    #     print('Returns: %.2f%%' % rt)
+    #
+    #     cerebro.plot(style='candlestick')
 
