@@ -19,7 +19,7 @@ class Backtest_Engine:
 
         # Boolean for whether stock is being held or not
         self.stock_held = False
-        self.stock_held_percentage = 0.0
+        self.stock_held_percentage = 1,0
 
         # Number of stocks bought
         self.num_bought = 0
