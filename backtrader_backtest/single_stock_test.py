@@ -111,7 +111,7 @@ class OverNight(bt.Strategy):
                     self.log('BUY CREATE, %.2f' % self.dataclose[0])
 
                     # Keep track of the created order to avoid a 2nd order
-                    self.order = self.buy()
+                    self.order = self.buy(coo=False, coc=True)
 
         else:
 
@@ -122,6 +122,11 @@ class OverNight(bt.Strategy):
 
                 # Keep track of the created order to avoid a 2nd order
                 self.order = self.sell()
+
+
+    def next_open(self):
+        # self.sell(coo=True, coc=False)
+        print('next_open')
 
 
 if __name__ == '__main__':
