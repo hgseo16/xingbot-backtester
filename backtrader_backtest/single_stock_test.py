@@ -82,16 +82,10 @@ class OverNight(bt.Strategy):
 
         self.order = None
 
-    def notify_trade(self, trade):
-        if not trade.isclosed:
-            return
-
-        self.log('OPERATION PROFIT, GROSS %.2f, NET %.2f' %
-                 (trade.pnl, trade.pnlcomm))
 
     def next(self):
         # order to sell at close price
-        self.order = self.sell(data=self.datas[0], coo=False, coc=True)
+        self.order = self.buy(data=self.datas[0], coo=False, coc=True)
 
 
     def next_open(self):
@@ -123,10 +117,8 @@ if __name__ == '__main__':
     cerebro.adddata(data)
     cerebro.addstrategy(OverNight)
     cerebro.broker.setcash(1000000.0)
-    cerebro.addsizer(bt.sizers.PercentSizer, percents=100)
-    cerebro.addanalyzer(bt.analyzers.AnnualReturn, _name='yearlyreturn')
+#    cerebro.addsizer(bt.sizers.PercentSizer, percents=100)
 
-    print(s)
     start_value = cerebro.broker.getvalue()
     print('Starting Portfolio Value: %.2f' % start_value)
 
